@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:simple_todo_app/ui/done_tasks_screen.dart';
 import 'package:simple_todo_app/ui/edit_item_screen.dart';
 import 'package:simple_todo_app/ui/todo_screen.dart';
 
@@ -14,6 +15,7 @@ class MyApp extends StatelessWidget {
         home: TodoScreen(),
         routes: {
           EditItemScreen.routeName: (ctx) => EditItemScreen(),
+          DoneTasksScreen.routeName: (ctx) => DoneTasksScreen(),
         });
   }
 }
