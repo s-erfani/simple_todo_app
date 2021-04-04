@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:simple_todo_app/ui/edit_item_screen.dart';
 
 class TodoItem extends StatelessWidget {
   @override
@@ -14,7 +15,9 @@ class TodoItem extends StatelessWidget {
             children: [
               IconButton(
                 icon: Icon(Icons.edit),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, EditItemScreen.routeName);
+                },
               ),
               IconButton(
                 icon: Icon(Icons.done_outline_rounded),
