@@ -16,12 +16,11 @@ class TodoScreen extends StatelessWidget {
         ],
       ),
       body: Container(
-        child: ListView(
-          children: [
-            TodoItem(),
-            TodoItem(),
-            TodoItem(),
-          ],
+        child: ListView.builder(
+          itemCount: 4,
+          itemBuilder: (context, i) {
+            return TodoItem();
+          },
         ),
       ),
     );
