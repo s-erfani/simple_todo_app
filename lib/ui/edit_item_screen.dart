@@ -6,12 +6,33 @@ class EditItemScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.check),
+        onPressed: () {
+          Navigator.pop(context);
+        },
+      ),
       appBar: AppBar(
         title: Text("title item"),
       ),
       body: Container(
+        margin: const EdgeInsets.all(16),
         child: Column(
-          children: [],
+          children: [
+            TextField(
+              decoration: InputDecoration(
+                labelText: "title",
+                border: OutlineInputBorder(),
+              ),
+            ),
+            const SizedBox(height: 16),
+            TextField(
+              decoration: InputDecoration(
+                labelText: "subtitle",
+                border: OutlineInputBorder(),
+              ),
+            ),
+          ],
         ),
       ),
     );
