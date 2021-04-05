@@ -15,9 +15,10 @@ class TodoScreen extends StatelessWidget {
         title: Text("Todo App"),
         actions: [
           IconButton(
-              onPressed: () =>
-                  Navigator.pushNamed(context, DoneTasksScreen.routeName),
-              icon: Icon(Icons.playlist_add_check_rounded))
+            onPressed: () =>
+                Navigator.pushNamed(context, DoneTasksScreen.routeName),
+            icon: Icon(Icons.playlist_add_check_rounded),
+          )
         ],
       ),
       body: Container(
