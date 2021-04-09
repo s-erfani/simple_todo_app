@@ -6,8 +6,8 @@ class TodoItems with ChangeNotifier {
     TodoItem(id: 1, title: "title 1", subtitle: "sub 1"),
     TodoItem(id: 2, title: "title 2", subtitle: "sub 2"),
     TodoItem(id: 3, title: "title 3", subtitle: "sub 3"),
-    TodoItem(id: 4, title: "title 4", subtitle: "sub 3"),
-    TodoItem(id: 5, title: "title 5", subtitle: "sub 3"),
+    TodoItem(id: 4, title: "title 4", subtitle: "sub 4"),
+    TodoItem(id: 5, title: "title 5", subtitle: "sub 5"),
   ];
 
   List<TodoItem> get todoItemList => _todoItems;

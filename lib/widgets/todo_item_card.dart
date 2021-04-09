@@ -18,7 +18,7 @@ class TodoItemCard extends StatelessWidget {
       child: Card(
         child: ListTile(
           title: Text(title),
-          subtitle: Text(id.toString()),
+          subtitle: Text(subtitle),
           trailing: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
