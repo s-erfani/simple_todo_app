@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:simple_todo_app/models/todo_item_model.dart';
+import 'package:provider/provider.dart';
+import 'package:simple_todo_app/models/todo_items.dart';
 import 'package:simple_todo_app/ui/add_todo_screen.dart';
 import 'package:simple_todo_app/ui/done_tasks_screen.dart';
 import 'package:simple_todo_app/widgets/todo_item_card.dart';
 
 class TodoScreen extends StatelessWidget {
-  final List<TodoItemModel> todoList = TodoItemModel().getTodoList();
+  // final List<TodoItem> todoList = TodoItems().todoItemList;
 
   @override
   Widget build(BuildContext context) {
@@ -25,12 +26,16 @@ class TodoScreen extends StatelessWidget {
         ],
       ),
       body: Container(
-        child: ListView.builder(
-          itemCount: todoList.length,
-          itemBuilder: (context, i) {
-            return TodoItemCard(
-              title: todoList[i].title,
-              subtitle: todoList[i].subtitle,
+        child: Consumer<TodoItems>(
+          builder: (context, myModel, _) {
+            return ListView.builder(
+              itemCount: myModel.todoItemList.length,
+              itemBuilder: (context, i) {
+                return TodoItemCard(
+                  title: myModel.todoItemList[i].title,
+                  subtitle: myModel.todoItemList[i].subtitle,
+                );
+              },
             );
           },
         ),

@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:simple_todo_app/models/todo_item.dart';
+import 'package:simple_todo_app/models/todo_items.dart';
 import 'package:simple_todo_app/ui/add_todo_screen.dart';
 import 'package:simple_todo_app/ui/done_tasks_screen.dart';
 import 'package:simple_todo_app/ui/edit_item_screen.dart';
@@ -11,17 +14,27 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        theme: ThemeData(
-          primaryColor: Colors.purple,
-          accentColor: Colors.purple[800],
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider.value(
+          value: TodoItem(),
         ),
-        debugShowCheckedModeBanner: false,
-        home: TodoScreen(),
-        routes: {
-          EditItemScreen.routeName: (ctx) => EditItemScreen(),
-          DoneTasksScreen.routeName: (ctx) => DoneTasksScreen(),
-          AddTodoScreen.routeName: (ctx) => AddTodoScreen(),
-        });
+        ChangeNotifierProvider.value(
+          value: TodoItems(),
+        ),
+      ],
+      child: MaterialApp(
+          theme: ThemeData(
+            primaryColor: Colors.purple,
+            accentColor: Colors.purple[800],
+          ),
+          debugShowCheckedModeBanner: false,
+          home: TodoScreen(),
+          routes: {
+            EditItemScreen.routeName: (ctx) => EditItemScreen(),
+            DoneTasksScreen.routeName: (ctx) => DoneTasksScreen(),
+            AddTodoScreen.routeName: (ctx) => AddTodoScreen(),
+          }),
+    );
   }
 }
