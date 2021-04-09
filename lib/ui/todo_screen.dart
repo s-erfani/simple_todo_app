@@ -32,6 +32,7 @@ class TodoScreen extends StatelessWidget {
               itemCount: myModel.todoItemList.length,
               itemBuilder: (context, i) {
                 return TodoItemCard(
+                  id: myModel.todoItemList[i].id,
                   title: myModel.todoItemList[i].title,
                   subtitle: myModel.todoItemList[i].subtitle,
                 );

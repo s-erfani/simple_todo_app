@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:simple_todo_app/models/done_tasks.dart';
 import 'package:simple_todo_app/models/todo_item.dart';
 import 'package:simple_todo_app/models/todo_items.dart';
 import 'package:simple_todo_app/ui/add_todo_screen.dart';
@@ -21,6 +22,9 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider.value(
           value: TodoItems(),
+        ),
+        ChangeNotifierProvider.value(
+          value: DoneTasks(),
         ),
       ],
       child: MaterialApp(

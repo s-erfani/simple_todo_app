@@ -17,7 +17,12 @@ class AddTodoScreen extends StatelessWidget {
         child: Icon(Icons.check),
         onPressed: () {
           newTodoItem = TodoItem(
-              title: titleController.text, subtitle: subtitleController.text);
+              id: Provider.of<TodoItems>(context, listen: false)
+                      .todoItemList
+                      .length +
+                  1,
+              title: titleController.text,
+              subtitle: subtitleController.text);
           Provider.of<TodoItems>(context, listen: false)
               .addTodoItem(newTodoItem);
           Navigator.pop(context);
@@ -39,6 +44,7 @@ class AddTodoScreen extends StatelessWidget {
             ),
             const SizedBox(height: 16),
             TextField(
+              controller: subtitleController,
               decoration: InputDecoration(
                 labelText: "subtitle",
                 border: OutlineInputBorder(),
