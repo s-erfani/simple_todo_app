@@ -6,8 +6,6 @@ import 'package:simple_todo_app/ui/done_tasks_screen.dart';
 import 'package:simple_todo_app/widgets/todo_item_card.dart';
 
 class TodoScreen extends StatelessWidget {
-  // final List<TodoItem> todoList = TodoItems().todoItemList;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

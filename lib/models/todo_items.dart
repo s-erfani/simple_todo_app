@@ -21,4 +21,6 @@ class TodoItems with ChangeNotifier {
     _todoItems.removeWhere((item) => item.id == id);
     notifyListeners();
   }
+
+  int get lastId => _todoItems.last.id;
 }

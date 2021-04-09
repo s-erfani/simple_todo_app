@@ -17,10 +17,7 @@ class AddTodoScreen extends StatelessWidget {
         child: Icon(Icons.check),
         onPressed: () {
           newTodoItem = TodoItem(
-              id: Provider.of<TodoItems>(context, listen: false)
-                      .todoItemList
-                      .length +
-                  1,
+              id: Provider.of<TodoItems>(context, listen: false).lastId + 1,
               title: titleController.text,
               subtitle: subtitleController.text);
           Provider.of<TodoItems>(context, listen: false)
