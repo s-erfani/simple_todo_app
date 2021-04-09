@@ -22,5 +22,13 @@ class TodoItems with ChangeNotifier {
     notifyListeners();
   }
 
+  void editTodoItem(int id, TodoItem editedTodo) {
+    TodoItem item = _todoItems.firstWhere((item) => item.id == id);
+    item.title = editedTodo.title;
+    item.subtitle = editedTodo.subtitle;
+    notifyListeners();
+  }
+
+// for adding new todos
   int get lastId => _todoItems.last.id;
 }

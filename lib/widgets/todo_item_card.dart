@@ -38,7 +38,9 @@ class TodoItemCard extends StatelessWidget {
                   color: Colors.black,
                 ),
                 onPressed: () {
-                  Navigator.pushNamed(context, EditItemScreen.routeName);
+                  Navigator.pushNamed(context, EditItemScreen.routeName,
+                      arguments:
+                          TodoItem(id: id, title: title, subtitle: subtitle));
                 },
               ),
               IconButton(
