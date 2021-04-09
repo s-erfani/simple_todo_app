@@ -23,17 +23,32 @@ class TodoItemCard extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               IconButton(
-                icon: Icon(Icons.edit),
+                icon: Icon(
+                  Icons.delete,
+                  color: Colors.red,
+                ),
+                onPressed: () {
+                  Provider.of<TodoItems>(context, listen: false)
+                      .removeFromList(id);
+                },
+              ),
+              IconButton(
+                icon: Icon(
+                  Icons.edit,
+                  color: Colors.black,
+                ),
                 onPressed: () {
                   Navigator.pushNamed(context, EditItemScreen.routeName);
                 },
               ),
               IconButton(
-                icon: Icon(Icons.done_outline_rounded),
+                icon: Icon(
+                  Icons.done_outline_rounded,
+                  color: Colors.green,
+                ),
                 onPressed: () {
                   Provider.of<DoneTasks>(context, listen: false)
                       .addToDone(TodoItem(title: title, subtitle: subtitle));
-                  print(id);
                   Provider.of<TodoItems>(context, listen: false)
                       .removeFromList(id);
                 },
