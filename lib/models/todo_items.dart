@@ -30,5 +30,11 @@ class TodoItems with ChangeNotifier {
   }
 
 // for adding new todos
-  int get lastId => _todoItems.last.id;
+  int get lastId {
+    if (_todoItems.length == 0) {
+      return 0;
+    } else {
+      return _todoItems.last.id;
+    }
+  }
 }
